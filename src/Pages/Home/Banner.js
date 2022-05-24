@@ -35,7 +35,7 @@ const Banner = () => {
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h4>Brings you only the best quality car parts</h4>
+                        <h4>Brings you only the best quality Products</h4>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
