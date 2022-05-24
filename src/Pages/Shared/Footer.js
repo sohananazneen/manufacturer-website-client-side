@@ -17,7 +17,7 @@ const Footer = () => {
                             <h2>Links</h2>
                             <Nav className="ms-auto gap-4 ">
                                 <CustomLink to='/'>Home</CustomLink>
-                                <CustomLink to='/parts'>Parts</CustomLink>
+                                <CustomLink to='/products'>Products</CustomLink>
                                 <CustomLink to='/portfolio'>My Portfolio</CustomLink>
                                 <CustomLink to='/blogs'>Blogs</CustomLink>
                                 <CustomLink to='/about'>About Us</CustomLink>
