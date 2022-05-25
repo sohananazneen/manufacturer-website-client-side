@@ -6,8 +6,8 @@ import Product from './Product';
 const Products = () => {
     const [product, setProduct] = useProducts();
     return (
-        <Container>
-            <h2 className='text-center my-4'>Car Parts</h2>
+        <Container className='my-5'>
+            <h2 className='text-center text-danger my-4'>Car Parts</h2>
             <Row xs={1} md={3} className="g-4">
                 {
                     product.map(product => <Product

@@ -6,9 +6,9 @@ import { MdRateReview } from 'react-icons/md';
 const BusinessSummary = () => {
     const style = { color: "red", fontSize: "60px" }
     return (
-        <Container className='text-center my-4'>
+        <Container className='text-center my-5'>
             <Row>
-                <h2>Business Summary</h2>
+                <h2 className='text-danger'>Business Summary</h2>
                 <p>We always try to provide good quality products</p>
             </Row>
             <Row>

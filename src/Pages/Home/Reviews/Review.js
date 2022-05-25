@@ -1,17 +1,23 @@
 
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import './Reviews.css'
 
 const Review = ({ review }) => {
-    const { img, name, customerReview } = review;
+    const { rating, name, customerReview } = review;
     return (
         <Col>
-            <Card style={{ height: '650px' }}>
-                <Card.Img variant="top" src={img} className="img-fluid w-75 " />
+            <Card style={{ height: '300px' }}>
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>{customerReview}</Card.Text>
+                    <blockquote className="blockquote mb-0 text-center">
+                        <p>
+                            {' '}
+                            {customerReview}{' '}
+                        </p>
+                        <p>Ratings: {rating} out of 5</p>
+                        <footer className="blockquote-footer">
+                            <cite title="Source Title">{name}</cite>
+                        </footer>
+                    </blockquote>
                 </Card.Body>
             </Card>
         </Col>

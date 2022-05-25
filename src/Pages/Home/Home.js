@@ -12,7 +12,7 @@ const Home = () => {
         <div>
             <Banner />
             <Container>
-                <h2 className='text-center my-4'>Car Parts</h2>
+                <h2 className='text-center text-danger my-4'>Car Parts</h2>
                 <Row xs={1} md={3} className="g-4">
                     {
                         product.slice(0, 3).map(product => <Product
