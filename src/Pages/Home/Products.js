@@ -1,23 +1,22 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import useProducts from '../../hooks/useProducts';
+import Product from './Product';
 
-const Products = ({ product }) => {
-    const { name, img, description, price, minOrderQuantity, availableQuantity
-    } = product;
+const Products = () => {
+    const [product, setProduct] = useProducts();
     return (
-        <Col>
-            <Card>
-                <Card.Img variant="top" src={img} className="img-fluid rounded" />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text><strong> || Price: $ {price} ||</strong></Card.Text>
-                    <Card.Text>Min Order Quantity: {minOrderQuantity}</Card.Text>
-                    <Card.Text>Available Quantity: {availableQuantity}</Card.Text>
-                    <Card.Text>{description}</Card.Text>
-                    <Button className='btn btn-danger mx-2'>Purchase</Button>
-                </Card.Body>
-            </Card>
-        </Col>
+        <Container>
+            <h2 className='text-center my-4'>Car Parts</h2>
+            <Row xs={1} md={3} className="g-4">
+                {
+                    product.map(product => <Product
+                        key={product._id}
+                        product={product}
+                    ></Product>)
+                }
+            </Row>
+        </Container>
     );
 };
 

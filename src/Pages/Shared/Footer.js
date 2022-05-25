@@ -5,11 +5,12 @@ import CustomLink from './CustomLink';
 const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
+
     return (
         <footer style={{
             background: `url(${footer})`,
             backgroundSize: 'cover'
-        }} className="text-white">
+        }} className="text-white mt-4">
             <div className="p-5">
                 <Container>
                     <Row>
