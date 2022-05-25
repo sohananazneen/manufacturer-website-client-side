@@ -7,7 +7,7 @@ const Purchase = () => {
     const [products, setProducts] = useProductDetails(id);
     return (
         <div>
-            <h1>purchase products{products.name}</h1>
+            <h1>purchase products{products.length}</h1>
         </div>
     );
 };

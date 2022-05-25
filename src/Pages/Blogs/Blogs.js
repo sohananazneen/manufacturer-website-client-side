@@ -51,7 +51,6 @@ const Blogs = () => {
                             Unit Testing is important because software developers sometimes try saving time doing minimal unit testing and this is myth because inappropriate unit testing leads to high cost Defect fixing during System Testing, Integration Testing and even Beta Testing after application is built. If proper unit testing is done in early development, then it saves time and money in the end.
 
                             Unit tests help to fix bugs early in the development cycle and save costs. It helps the developers to understand the testing code base and enables them to make changes quickly. Good unit tests serve as project documentation. Unit tests help with code re-use. Migrate both your code and your tests to your new project. Tweak the code until the tests run again.
-
                         </p>
                     </Col>
                 </Row>
