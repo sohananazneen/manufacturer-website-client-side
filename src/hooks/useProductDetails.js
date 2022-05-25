@@ -4,7 +4,7 @@ const useProductDetails = id => {
     const [products, setProducts] = useState({});
 
     useEffect(() => {
-        const url = `Products.json/products/${id}`;
+        const url = `Products.json/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));

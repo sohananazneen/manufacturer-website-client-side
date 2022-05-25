@@ -8,7 +8,7 @@ const Product = ({ product }) => {
 
     const navigate = useNavigate();
     const navigateToPurchase = id => {
-        navigate(`/products/${id}`);
+        navigate(`/product/${id}`);
     }
 
     return (

@@ -3,8 +3,8 @@ import { Container, Row } from 'react-bootstrap';
 import useProducts from '../../hooks/useProducts';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
-import Product from './Product';
-import Reviews from './Reviews';
+import Product from './Products/Product';
+import Reviews from './Reviews/Reviews';
 
 const Home = () => {
     const [product, setProduct] = useProducts();
