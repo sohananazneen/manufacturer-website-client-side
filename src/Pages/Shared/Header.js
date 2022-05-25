@@ -17,7 +17,7 @@ const Header = () => {
                             <CustomLink to='/products'>Products</CustomLink>
                             <CustomLink to='/portfolio'>My Portfolio</CustomLink>
                             <CustomLink to='/blogs'>Blogs</CustomLink>
-                            <CustomLink to='/about'>About Us</CustomLink>
+                            <CustomLink to='/contact'>Contact Us</CustomLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

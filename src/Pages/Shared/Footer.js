@@ -33,7 +33,7 @@ const Footer = () => {
                                 <CustomLink to='/products'>Products</CustomLink>
                                 <CustomLink to='/portfolio'>My Portfolio</CustomLink>
                                 <CustomLink to='/blogs'>Blogs</CustomLink>
-                                <CustomLink to='/about'>About Us</CustomLink>
+                                <CustomLink to='/contact'>Contact Us</CustomLink>
                             </Nav>
                         </Col>
                         <Col xs={6} md={6}>

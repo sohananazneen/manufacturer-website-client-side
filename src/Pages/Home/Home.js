@@ -1,9 +1,10 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import useProducts from '../../hooks/useProducts';
-import About from '../About/About';
+import About from './About';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
+import Newsletter from './Newsletter';
 import Product from './Products/Product';
 import Reviews from './Reviews/Reviews';
 
@@ -27,6 +28,7 @@ const Home = () => {
             </Container>
             <BusinessSummary />
             <Reviews />
+            <Newsletter />
         </div>
     );
 };
