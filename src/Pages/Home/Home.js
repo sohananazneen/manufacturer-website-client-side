@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import useProducts from '../../hooks/useProducts';
+import About from '../About/About';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import Product from './Products/Product';
@@ -11,8 +12,9 @@ const Home = () => {
     return (
         <div>
             <Banner />
-            <Container>
-                <h2 className='text-center text-danger my-4'>Car Parts</h2>
+            <About />
+            <Container className='my-5'>
+                <h2 className='text-center text-danger fw-bolder my-4'>Car Parts</h2>
                 <Row xs={1} md={3} className="g-4">
                     {
                         product.slice(0, 3).map(product => <Product
@@ -21,6 +23,7 @@ const Home = () => {
                         ></Product>)
                     }
                 </Row>
+                <hr />
             </Container>
             <BusinessSummary />
             <Reviews />

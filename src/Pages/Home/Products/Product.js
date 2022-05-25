@@ -13,7 +13,7 @@ const Product = ({ product }) => {
 
     return (
         <Col>
-            <Card style={{ height: '650px' }}>
+            <Card style={{ height: '750px' }} className="shadow p-3 mb-5 bg-body rounded">
                 <Card.Img variant="top" src={img} className="img-fluid w-75 " />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
@@ -24,7 +24,7 @@ const Product = ({ product }) => {
                     <Button onClick={() => navigateToPurchase(_id)} className='btn btn-danger mx-2'>Purchase</Button>
                 </Card.Body>
             </Card>
-        </Col >
+        </Col>
     );
 };
 

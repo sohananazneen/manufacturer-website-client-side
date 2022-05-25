@@ -6,7 +6,7 @@ const Review = ({ review }) => {
     const { rating, name, customerReview } = review;
     return (
         <Col>
-            <Card style={{ height: '300px' }}>
+            <Card style={{ height: '300px' }} className="shadow-sm p-3 mb-5 bg-body rounded">
                 <Card.Body>
                     <blockquote className="blockquote mb-0 text-center">
                         <p>
