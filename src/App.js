@@ -5,6 +5,8 @@ import Blogs from './Pages/Blogs/Blogs';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import Products from './Pages/Home/Products/Products';
+import Login from './Pages/Login/Login';
+import SignUp from './Pages/Login/SignUp';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Pages/Shared/Footer';
@@ -19,9 +21,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="products" element={<Products />} />
-        <Route path="/product/:id" element={<Purchase />} />
+        <Route path="product/:id" element={<Purchase />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer />

@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 const Contact = () => {
     return (
         <div className='my-4'>
-            <h2 className='text-center'>Contact Us</h2>
+            <h2 className='text-center fw-bold'>Contact Us</h2>
             <div className='d-flex justify-content-center'>
                 <Form className='w-50 border border-danger text-center p-5 shadow-lg p-3 mb-5 bg-body rounded'>
                     <Form.Group className="mb-3" controlId="formBasicName">

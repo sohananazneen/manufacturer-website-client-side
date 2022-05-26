@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Carousel, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import Review from './Review';
 
 const Reviews = () => {
