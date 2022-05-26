@@ -6,6 +6,7 @@ import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import Products from './Pages/Home/Products/Products';
 import Login from './Pages/Login/Login';
+import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Purchase from './Pages/Purchase/Purchase';
@@ -21,7 +22,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="products" element={<Products />} />
-        <Route path="product/:id" element={<Purchase />} />
+        <Route path="product/:id" element={
+          <RequireAuth>
+            <Purchase />
+          </RequireAuth>
+        } />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="login" element={<Login />} />

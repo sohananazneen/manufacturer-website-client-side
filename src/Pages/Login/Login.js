@@ -3,14 +3,13 @@ import React from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import CustomLink from '../Shared/CustomLink';
 import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
-    const navigate = useNavigate();
     const [
         signInWithEmailAndPassword,
         user,
@@ -18,9 +17,14 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     let signInError;
 
+    if (user) {
+        navigate(from, { replace: true });
+    }
     if (loading) {
         return <Loading></Loading>
     }
