@@ -33,8 +33,8 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
     }
 
-    const navigateRegister = event => {
-        navigate('/register');
+    const navigateSignUp = event => {
+        navigate('/signup');
     }
     const resetPassword = async () => {
         const email = email.current.value;
@@ -48,9 +48,9 @@ const Login = () => {
     }
     return (
         <div className='d-flex justify-content-center align-items-center vh-100' >
-            <Card style={{ width: '25rem' }} className='shadow-lg p-3  bg-body rounded-3' >
+            <Card style={{ width: '30rem' }} className='shadow-lg p-3  bg-body rounded-3' >
                 <Card.Body>
-                    <Card.Title className='text-center fw-bold text-danger'>Login</Card.Title>
+                    <Card.Title className='text-center fw-bold text-danger my-4'>Login</Card.Title>
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control type="email" placeholder="Enter email"  {...register("email", {
@@ -85,14 +85,17 @@ const Login = () => {
                                 {errors.password?.type === 'minLength' && <span className="text-danger">{errors.password.message}</span>}
                             </label>
                         </Form.Group>
+                        <p><small>
+                            Forget Password? <button className='btn btn-link text-decoration-none' onClick={resetPassword} >Reset Password</button>
+                        </small></p>
                         {signInError}
                         <Button variant="danger w-100 mx-auto d-block mb-2" type="submit">
                             LOGIN
                         </Button>
                     </Form>
-                    <p>Don't have Account? <CustomLink to="/signup" className='pe-auto text-decoration-none text-primary' onClick={navigateRegister} >Creat New Account</CustomLink> </p>
-
-                    <p>Forget Password? <button className='btn btn-link  pe-auto text-decoration-none' onClick={resetPassword} >Reset Password</button> </p>
+                    <p><small>
+                        Don't have Account? <CustomLink to="/signup" className='text-decoration-none text-primary' onClick={navigateSignUp} >Creat New Account</CustomLink>
+                    </small> </p>
                     <SocialLogin />
                 </Card.Body>
             </Card>
