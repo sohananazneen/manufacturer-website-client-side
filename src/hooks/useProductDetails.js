@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
 const useProductDetails = id => {
-    const [products, setProducts] = useState({});
+    const [product, setProduct] = useState({});
 
     useEffect(() => {
         const url = `http://localhost:5000/product/${id}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setProducts(data));
+            .then(data => setProduct(data));
 
     }, [id]);
-    return [products, setProducts]
+    return [product, setProduct]
 };
 
 export default useProductDetails;

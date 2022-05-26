@@ -27,6 +27,11 @@ const Header = () => {
                             <CustomLink to='/blogs'>Blogs</CustomLink>
                             <CustomLink to='/contact'>Contact Us</CustomLink>
                             {
+                                user && <>
+                                    <CustomLink to='/dashboard'>Dashboard</CustomLink>
+                                </>
+                            }
+                            {
                                 user ?
                                     <>
                                         <Button className="btn btn-danger" onClick={logout}>Sign out</Button>

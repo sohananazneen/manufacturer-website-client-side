@@ -19,7 +19,7 @@ const Portfolio = () => {
                                 </Card.Text>
                                 <h6 className='text-danger' >Live Links</h6>
                                 <Card.Link href="https://sohanan.github.io/sohana-1st-portfolio/">My portfolio</Card.Link>
-                                <Card.Link href="https://sohanan.github.io/a2-influencer-gear/">Influencer gear</Card.Link>
+                                <Card.Link href="https://halal-food-app.netlify.app/">Halal Food</Card.Link>
                                 <Card.Link href="https://halal-grocery.web.app/">Halal Grocery</Card.Link>
                             </Card.Body>
                         </Card>

@@ -3,6 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Blogs from './Pages/Blogs/Blogs';
 import Contact from './Pages/Contact/Contact';
+import AddReview from './Pages/Dashboard/AddReview';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/Home/Home';
 import Products from './Pages/Home/Products/Products';
 import Login from './Pages/Login/Login';
@@ -22,11 +26,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="products" element={<Products />} />
-        <Route path="product/:id" element={
+        <Route path="product/:Pid" element={
           <RequireAuth>
             <Purchase />
           </RequireAuth>
         } />
+        <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="addReview" element={<AddReview></AddReview>}></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+        </Route>
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="login" element={<Login />} />
