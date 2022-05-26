@@ -1,4 +1,3 @@
-import { sendPasswordResetEmail } from 'firebase/auth';
 import React from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -40,16 +39,7 @@ const Login = () => {
     const navigateSignUp = event => {
         navigate('/signup');
     }
-    const resetPassword = async () => {
-        const email = email.current.value;
-        if (email) {
-            await sendPasswordResetEmail(email);
-            // toast('Sent email');
-        }
-        else {
-            // toast('please enter your email address');
-        }
-    }
+
     return (
         <div className='d-flex justify-content-center align-items-center vh-100' >
             <Card style={{ width: '30rem' }} className='shadow-lg p-3  bg-body rounded-3' >
@@ -89,9 +79,6 @@ const Login = () => {
                                 {errors.password?.type === 'minLength' && <span className="text-danger">{errors.password.message}</span>}
                             </label>
                         </Form.Group>
-                        <p><small>
-                            Forget Password? <button className='btn btn-link text-decoration-none' onClick={resetPassword} >Reset Password</button>
-                        </small></p>
                         {signInError}
                         <Button variant="danger w-100 mx-auto d-block mb-2" type="submit">
                             LOGIN
