@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import CustomLink from '../Shared/CustomLink';
 import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
@@ -17,9 +18,18 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const location = useLocation();
+    const [token] = useToken(user);
+
+    let from = location.state?.from?.pathname || "/";
 
     let signInError;
 
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
     if (loading || updating) {
         return <Loading></Loading>
     }
@@ -32,10 +42,10 @@ const SignUp = () => {
         </p>
     }
 
+
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        navigate('/');
     }
 
     const navigateLogin = event => {

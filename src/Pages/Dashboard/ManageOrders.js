@@ -1,13 +1,13 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
-import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
-import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 import axiosPrivate from '../../api/axiosPrivate';
+import auth from '../../firebase.init';
 
-const MyOrders = () => {
+const ManageOrders = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
@@ -47,12 +47,13 @@ const MyOrders = () => {
     }
     return (
         <Container>
-            <h2 className='text-center mt-4'>My Orders: {orders.length}</h2>
+            <h2 className='text-center mt-4'> Orders: {orders.length}</h2>
             <Row className="d-flex justify-content-center mt-4">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
@@ -64,6 +65,7 @@ const MyOrders = () => {
                             orders.map((order, index) =>
                                 <tr>
                                     <th scope="row">{index + 1}</th>
+                                    <td>{user.email}</td>
                                     <td>{order.product}</td>
                                     <td>{order.price}</td>
                                     <td>{order.quantity}</td>
@@ -77,4 +79,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageOrders;

@@ -3,7 +3,7 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    const { _id, name, img, description, price, minOrderQuantity, availableQuantity
+    const { _id, name, img, description, price, quantity
     } = product;
 
     const navigate = useNavigate();
@@ -18,10 +18,15 @@ const Product = ({ product }) => {
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text><strong> || Price: $ {price} ||</strong></Card.Text>
-                    <Card.Text>Min Order Quantity: {minOrderQuantity}</Card.Text>
-                    <Card.Text>Available Quantity: {availableQuantity}</Card.Text>
+                    <Card.Text>
+                        {
+                            quantity > 0
+                                ? <span>{quantity} pieces available </span>
+                                : <span className='text-danger'>Sold Out </span>
+                        }
+                    </Card.Text>
                     <Card.Text>{description}</Card.Text>
-                    <Button onClick={() => navigateToPurchase(_id)} className='btn btn-danger mx-2'>Purchase</Button>
+                    <Button onClick={() => navigateToPurchase(_id)} disabled={quantity == 0} className='btn btn-danger mx-2'>Purchase</Button>
                 </Card.Body>
             </Card>
         </Col>

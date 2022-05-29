@@ -5,7 +5,7 @@ import Review from './Review';
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('Reviews.json')
+        fetch('https://still-temple-50521.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [])

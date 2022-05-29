@@ -4,9 +4,11 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import CustomLink from '../Shared/CustomLink';
 import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
+import { useEffect } from "react";
 
 const Login = () => {
     const [
@@ -18,12 +20,17 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
+    const [token] = useToken(user);
+
     let from = location.state?.from?.pathname || "/";
     let signInError;
 
-    if (user) {
-        navigate(from, { replace: true });
-    }
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
+
     if (loading) {
         return <Loading></Loading>
     }
@@ -32,7 +39,6 @@ const Login = () => {
     }
 
     const onSubmit = data => {
-        console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
     }
 
