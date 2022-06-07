@@ -12,7 +12,7 @@ const Portfolio = () => {
                             <Card.Body>
                                 <Card.Title>Sohana Nazneen</Card.Title>
                                 <Card.Text>
-                                    Email: sohananaz01@gmail.com
+                                    Email: sohana.nazneen.1@gmail.com
                                 </Card.Text>
                                 <Card.Text>
                                     Educational Background: B.Sc. (Hons) in CSE

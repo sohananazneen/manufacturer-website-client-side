@@ -6,18 +6,14 @@
 --------------
 ### Features and functionality used :-
 
-* Home Page
+* Home Page contain Header, Banner, About Us, Parts Section, Business Summary, Reviews, Subscribe and Footer.
 
-* Dashboard
+* Implement an email/password (login/register)-based login system & protected purchase page.
 
-* Register
+* Two types of user access systems in the Dashboard (Admin & User).
 
-* Login
+* An Admin can make any user admin, can add My Profile, Manage All Orders, Add A Product, Manage Products. Whereas users can see My Orders, Add A Review, My Profile pages.
 
-* React Js
+* Other pages are Dashboard, Products, My Portfolio, Blog, Contact Us, Register, Login.
 
-* React Bootstrap
-
-* React Router
-
-* firebase
+Technology Used: HTML, CSS, React Js, React Bootstrap, React Router, Node Js, Express Js, MongoDB, Firebase, Heroku, Stripe, Jwt.

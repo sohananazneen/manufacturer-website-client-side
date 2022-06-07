@@ -29,8 +29,8 @@ const ManageProducts = () => {
         <Container className='my-5'>
             <h2 className='text-center my-4'>Manage Products</h2>
             <Row xs={1} md={3} className="g-4">
-                <table class="table">
-                    <thead class="thead-dark">
+                <table className="table">
+                    <thead className="thead-dark">
                         <tr>
                             <th></th>
                             <th>Email</th>

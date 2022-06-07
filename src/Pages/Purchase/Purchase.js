@@ -15,16 +15,18 @@ const Purchase = () => {
     const handlePlaceOrder = event => {
         event.preventDefault();
         const order = {
-            email: user.email,
-            product: product.name,
+            email: user?.email,
+            UserName: user?.displayName,
+            productName: product.name,
             price: product.price,
             quantity: product.quantity,
-            id: id,
+            productDescription: product.description,
+            id,
             address: event.target.address.value,
             phone: event.target.phone.value
         }
 
-        axios.post('https://still-temple-50521.herokuapp.com/order', order)
+        axios.post('http://localhost:5000/order', order)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

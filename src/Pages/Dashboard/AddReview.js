@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const AddReview = () => {
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = (data, e) => {
         const url = `https://still-temple-50521.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
@@ -19,7 +19,7 @@ const AddReview = () => {
             .then(result => {
                 if (result.insertedId) {
                     toast('Review Added');
-                    data.target.reset();
+                    e.target.reset();
                 };
             })
     };

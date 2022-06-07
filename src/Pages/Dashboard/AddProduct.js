@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data, e) => {
         const url = `https://still-temple-50521.herokuapp.com/product`;
         fetch(url, {
             method: 'POST',
@@ -18,7 +18,7 @@ const AddProduct = () => {
             .then(result => {
                 if (result.insertedId) {
                     toast('Product Added');
-                    data.target.reset();
+                    e.target.reset();
                 };
             })
     };

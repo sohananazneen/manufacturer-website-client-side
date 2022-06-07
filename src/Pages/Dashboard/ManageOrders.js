@@ -12,28 +12,16 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {
-        const getOrders = async () => {
-            const email = user.email;
-            const url = `https://still-temple-50521.herokuapp.com/order?email=${email}`;
-            try {
-                const { data } = await axiosPrivate.get(url);
-                setOrders(data);
-            }
-            catch (error) {
-                console.log(error.message);
-                if (error.response.status === 401 || error.response.status === 403) {
-                    signOut(auth);
-                    navigate('/login')
-                }
-            }
-        }
-        getOrders();
-    }, [user])
+        fetch('http://localhost:5000/allorders')
+            .then(res => res.json())
+            .then(data => setOrders(data));
+
+    }, [])
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://still-temple-50521.herokuapp.com/order/${id}`;
+            const url = `http://localhost:5000/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -49,8 +37,8 @@ const ManageOrders = () => {
         <Container>
             <h2 className='text-center mt-4'> Orders: {orders.length}</h2>
             <Row className="d-flex justify-content-center mt-4">
-                <table class="table">
-                    <thead class="thead-dark">
+                <table className="table">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Email</th>
