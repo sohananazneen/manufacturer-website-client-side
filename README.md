@@ -17,3 +17,9 @@
 * Other pages are Dashboard, Products, My Portfolio, Blog, Contact Us, Register, Login.
 
 Technology Used: HTML, CSS, React Js, React Bootstrap, React Router, Node Js, Express Js, MongoDB, Firebase, Heroku, Stripe, Jwt.
+
+###  Admin credentials 
+(
+   email address :  phero@gmail.com 
+   password : 123456
+)
